@@ -1,0 +1,26 @@
+$(function(){
+ $('ol li').mouseover(function(e) {
+    $('ul').stop().animate({top:$(this).index()*-369},500)
+	$(this).addClass('current').siblings().removeClass()
+	num=$(this).index()+1
+	
+}); 
+    var mytimer=setInterval(playauto,2000)
+	var num=1
+	function playauto(){
+		if(num>4){
+			num=0
+		}
+		$('ul').stop().animate({top:num*-369},500)
+	    $('ol li').eq(num).addClass('current').siblings().removeClass()
+		num++
+		
+	}
+	$('li').hover(function(e) {
+        clearInterval(mytimer)
+    },function(){
+	 mytimer=setInterval(playauto,2000)
+	});
+	
+})
+

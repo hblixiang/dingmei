@@ -1,0 +1,5 @@
+$( function(){
+	$('#nav>ul>li').hover(function(e){
+        $(this).children().stop().slideToggle()
+    });
+})
